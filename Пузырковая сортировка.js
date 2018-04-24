@@ -1,0 +1,46 @@
+/**
+ * Created by anton on 23.04.2018.
+ */
+
+var lngth = Math.floor(Math.random() * 100);
+var arr = new Array(lngth);
+
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = Math.floor(Math.random() * 100);
+}
+
+// function bubbleSort(arr) {
+//     "use strict";
+//
+//     for (var i = 0; i < arr.length - 1; i++) {
+//         for (var j = 0; j < arr.length - 1 - i; j++) {
+//             if (arr[j + 1] < arr[j]) {
+//                 var t = arr[j + 1];
+//                 arr[j + 1] = arr[j];
+//                 arr[j] = t;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+// console.log(bubbleSort(arr));
+
+//my realisation
+function bubbleSortAlternative(arr) {
+    "use strict";
+
+    for (var i = arr.length - 1; i >= 0; i--) {
+        // console.log(arr[i]);
+        for (var j = i - 1; j >= 0; j--) {
+            // console.log(arr[j]);
+            if (arr[j] > arr[i]) {
+                var rigth = arr[i];
+                var left = arr[j];
+                arr[i] = left;
+                arr[j] = rigth;
+            }
+        }
+    }
+    return arr;
+}
+console.log(bubbleSortAlternative(arr));
